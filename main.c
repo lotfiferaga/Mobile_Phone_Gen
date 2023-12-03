@@ -49,7 +49,7 @@ void affnumero(struct nfav *p, char n[20])
     strcpy(p->nom,n);
 }
 
-void affnom(struct nfav *p,char n [20]) //affecte un nom au abonné(e)
+void affnom(struct nfav *p,char n [20]) //affecte un nom au abonnÃ©(e)
 {
 strcpy(p->nom,n);
 }
@@ -86,7 +86,7 @@ int frestant(struct abonne abo)
     if ((strcmp(abo.profile,"Mheni")==0)||(strcmp(abo.profile,"Gosto")==0)||(strcmp(abo.profile,"Line1200")==0)||(strcmp(abo.profile,"Family")==0)) r=4-abo.nfavo;
     return r;
 }
-/** la verificationt du max des numéros favoris **/
+/** la verificationt du max des numÃ©ros favoris **/
 boolean maxfav(struct abonne abo)
 {
     boolean max;
@@ -107,7 +107,7 @@ boolean existe(struct nfav *tete,char numo[1000])
     };
     return ex;
 }
-/** vérification des droits de service favoris **/
+/** vÃ©rification des droits de service favoris **/
 int droitfav(struct abonne* abo)
 {
     char d[1000];
@@ -117,7 +117,7 @@ int droitfav(struct abonne* abo)
     if((strcmp(d,"Mheni")==0)||(strcmp(d,"Gosto")==0)||(strcmp(d,"Line1200")==0)||(strcmp(d,"Family")==0)) droit=1;
     return droit;
 }
-/** procédure génératrice des numéro aléatoire selon chaque service réseaux **/
+/** procÃ©dure gÃ©nÃ©ratrice des numÃ©ro alÃ©atoire selon chaque service rÃ©seaux **/
 void genere_numero(int reseau,char numero[100])
 {
     int r,f,d;
@@ -176,7 +176,7 @@ void sauvgarde(struct abonne abo)
 
 }
 
-/** module pour recuperer  les abonnés **/
+/** module pour recuperer  les abonnÃ©s **/
 int recup(struct abonne *abo,char *numero)
 {
     FILE *fichier=NULL;
@@ -218,7 +218,7 @@ int recup(struct abonne *abo,char *numero)
                 (*abo).credit=strtol(tab,NULL,20);
                 fseek(fichier,2,SEEK_CUR);
                 (*abo).nfavo=strtol(tab,NULL,20);
-                // pour récupérer les données des abonnés du fichier "abonnee.txt"
+                // pour rÃ©cupÃ©rer les donnÃ©es des abonnÃ©s du fichier "abonnee.txt"
                 if (((*abo).nfavo)!=0)
                        {
                            q=allouer();
@@ -240,7 +240,7 @@ int recup(struct abonne *abo,char *numero)
     } else printf("il y a un problem dans le fichier 'abonne.txt' \n " );
  return trouv;
 }
-/** Module de modification des utilisateurs déja inscrit **/
+/** Module de modification des utilisateurs dÃ©ja inscrit **/
 void modifier(struct abonne abo)
 {
     FILE *fichier=NULL;
@@ -279,7 +279,7 @@ void modifier(struct abonne abo)
 
 }
 
-/** recherche du numéro favoris **/
+/** recherche du numÃ©ro favoris **/
 void favoris(struct abonne abo,int a,char *res)
 {
     int l;
@@ -292,12 +292,12 @@ void favoris(struct abonne abo,int a,char *res)
     }while((l<a)&&(p!=NULL)) ;
     if (p==NULL)
     {
-        printf("Ce numéro n'est pas dans la liste des favoris \n");
+        printf("Ce numÃ©ro n'est pas dans la liste des favoris \n");
     }else strcpy(res,numero(p));
 }
 
-/** les modules de manipulation des listes des numéros favoris  **/
-// le parcour des numéros favoris
+/** les modules de manipulation des listes des numÃ©ros favoris  **/
+// le parcour des numÃ©ros favoris
 void lister(struct nfav *tete)
 {
     struct nfav *p;
@@ -500,7 +500,7 @@ void compte(struct abonne *abo,int o)
     }
 
 }
-//choisir un operateur réseau
+//choisir un operateur rÃ©seau
 void reseau(int* operateur,struct abonne *abo)
 {
    printf("Bienvenue chez Operateur reseaux :) \n");
@@ -686,21 +686,6 @@ void menu(int choix)
         break;
     }
 }
-
-
-
-
-
-
-// AFFECTE 4 favoris à chaque profile
-/* int nombre_favoris(char *profile)
-{
-   struct abonne abo;
-   if (((*abo).profile=="Gosto")||((*abo).profile=="Mheni")||((*abo).profile=="Mobicontrol")||((*abo).profile=="Line 1200")||((*abo).profile=="Family"))
-   {
-       (*abo).nfavo=4;
-   }
-} */
 
 
 int main()
